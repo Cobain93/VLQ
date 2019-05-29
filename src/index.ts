@@ -1,3 +1,4 @@
+import { IVLQ } from "./../index.d";
 import * as base64 from "./utils/base64";
 
 import { VLQ_BASE, VLQ_BASE_MASK, VLQ_BASE_SHIFT, VLQ_CONTINUATION_BIT } from "./config";
@@ -27,7 +28,7 @@ function base64VLQ_encode (aValue: number): string {
   return encoded;
 }
 
-const VLQ = {
+const VLQ: IVLQ = {
   encode: base64VLQ_encode,
 };
 export { VLQ };
