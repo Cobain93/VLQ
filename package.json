@@ -1,6 +1,6 @@
 {
-  "name": "vlq",
-  "version": "0.0.1",
+  "name": "source_map_vlq",
+  "version": "0.0.2",
   "author": "cobain",
   "description": "vlq",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "build:cjs": "webpack --env.cjs --env.nodevtool & webpack --env.production --env.cjs",
     "build:umd": "webpack --env.umd --env.nodevtool & webpack --env.production --env.umd",
     "build:amd": "webpack --env.amd --env.nodevtool & webpack --env.production --env.amd",
-    "build": "npm run clean & cross-env NODE_ENV=production & npm run build:cjs & npm run build:amd & npm run build:umd",
+    "build": "npm run clean && cross-env NODE_ENV=production && npm run build:cjs && npm run build:amd && npm run build:umd",
     "test": "mocha test/index.ts"
   },
   "devDependencies": {
