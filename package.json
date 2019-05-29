@@ -16,11 +16,11 @@
     "clean": "rimraf ./dist",
     "upload": "node cs_upload.js",
     "serve": "http-server --cors -p 3001",
-    "dev": "cross-env NODE_ENV=development cross-env umd=true webpack-dev-server",
-    "build:cjs": "cross-env NODE_ENV=production cross-env cjs=true webpack",
-    "build:umd": "cross-env NODE_ENV=production cross-env umd=true webpack",
-    "build:amd": "cross-env NODE_ENV=production cross-env amd=true webpack",
-    "build": "npm run clean && cross-env NODE_ENV=production && npm run build:cjs && npm run build:amd && npm run build:umd",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --color --progress --hot --env.umd --port 3000",
+    "build:cjs": "webpack --env.cjs --env.nodevtool & webpack --env.production --env.cjs",
+    "build:umd": "webpack --env.umd --env.nodevtool & webpack --env.production --env.umd",
+    "build:amd": "webpack --env.amd --env.nodevtool & webpack --env.production --env.amd",
+    "build": "npm run clean & cross-env NODE_ENV=production & npm run build:cjs & npm run build:amd & npm run build:umd",
     "test": "mocha test/index.ts"
   },
   "devDependencies": {
@@ -31,9 +31,13 @@
     "string-replace-loader": "2.1.1",
     "ts-loader": "^3.5.0",
     "typescript": "3.1.3",
-    "webpack": "^1.15.0"
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
   },
   "dependencies": {
-    "webpack-dev-server": "^1.16.5"
+    "rimraf": "^2.6.2",
+    "ts-loader": "^4.5.0",
+    "uglifyjs-webpack-plugin": "^2.1.3"
   }
 }
