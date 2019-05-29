@@ -1,0 +1,21 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "target": "es3",
+    "types": [],
+    "lib": ["es2017", "dom", "es5"],
+    "noImplicitUseStrict": true
+  },
+  "exclude": [
+    "node_modules",
+    "*.js",
+    "dist",
+    "test",
+    "examples"
+  ]
+}
